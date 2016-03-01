@@ -10,21 +10,21 @@ env:
     - XUNIT_FILE=./shippable/testresults/result.xml
     - API_URL=http://micro-api.us-east-1.elasticbeanstalk.com:80
     - AWSCLI_PATH=/usr/local/bin
-    - AWS_EB_APPLICATION=aye0aye # existing EB application name
-    - AWS_EB_ENVIRONMENT=micro-www # existing EB environment name
-    - AWS_S3_BUCKET=shippable-demo-eb # existing S3 bucket that allows EB access
+    - AWS_EB_APPLICATION=EBNodeSampleApp # existing EB application name
+    - AWS_EB_ENVIRONMENT= ebnodesamplea-6wte2-env # existing EB environment name
+    - AWS_S3_BUCKET=elasticbeanstalk-us-west-2-152953975610 # existing S3 bucket that allows EB access
     - AWS_S3_FOLDER=$AWS_EB_APPLICATION/$AWS_EB_ENVIRONMENT # S3 folder to use
-    - AWS_REGION=us-east-1 # AWS region to deploy into
-    - REGISTRY_ACCOUNT=ttrahan # image registry account name, e.g. Docker Hub account
+    - AWS_REGION=us-west-2 # AWS region to deploy into
+    - REGISTRY_ACCOUNT=balavignesh # image registry account name, e.g. Docker Hub account
     - ACCOUNT_IDENTIFIER=shippable.$REGISTRY_ACCOUNT
     - AWS_DEPLOY_JSON=Dockerrun.aws.json.$ACCOUNT_IDENTIFIER.$AWS_EB_ENVIRONMENT
     - AWS_DOCKER_CONFIG=dockerconfig.$ACCOUNT_IDENTIFIER.$AWS_EB_ENVIRONMENT
     # encrypted variable for AWS_ACCESS_KEY_ID, unique to each Shippable project
     # you must generate your own hash within Shippable project settings
-    - secure:
+    - secure: V+RraYrroeu1FISH+b36DvSAkUs0bMT7TK9AFUpS/+uOtutLhfoIg9TSpz8FDxKfPhBf1oqMmSv6+flhJK0edPnwyPYTEJ7J5AM9AgY9QqSgr0A1tmJH3KM6E8JSIxAMh/GXd8B0kOkoYQfzStsyp1pMwRbkTf62pwOAqVUG6TXybHG+6V9yEfLbTDucutCqqLWAIA6z/c4act7jeEgeDpfTkCZV7uHcL/ciZTEyvZuznyhGmNv1FpU8HdgdUP4/DDtepn0foZyPhlwAqjycrfojEEGz+kBEWaBdOenza/RbJyT0TzzbeZu1b8fUufgFKHt4m2Vl0sJOkq34G7rKyg==
     # encrypted variable for AWS_SECRET_ACCESS_KEY, unique to each Shippable project
     # you must generate your own hash within Shippable project settings
-    - secure:
+    - secure: O8+c+nkNnZcadfYqvx2YAFRYfDdeBLHE6CzQkh0o214XinU1qKpyczLKTeKb7G9O0JOY7CO+KvrNOyVy8uBYCbVmxdgV7OL1HnGz9f5SRrinvkLDPJCry04/gXmgmZYpARQdJ0mJcjKGZ2rY8ntw1EqYTCgS7Vv9G8LtBpjAxEXvvvNXMNurgrbUAs24sdzfz5Q2ivQRrOEfxal7Gt7K3IutoTqQfq/rOWsAB8c0ZBoLO57IuR2e/gPIY7w0z2C/P2B/ytw6yupOeAWVkbjaggejuO7QTnI7eNQnoczGC7Wx62V9Rd3jjmsRujsYhd/KGQMvPtNRsTnDxOPAyHJlRw==
 
 build:
   pre_ci:
